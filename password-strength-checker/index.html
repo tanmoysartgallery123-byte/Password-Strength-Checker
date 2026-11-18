@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="checker">
+    <header>
+      <h1>How strong is your password?</h1>
+      <p class="lede">Type a password below. It is checked in your browser and never sent anywhere.</p>
+    </header>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <div class="input-row">
+        <input
+          type="password"
+          id="password"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Start typing"
+          aria-describedby="verdict hint"
+        >
+        <button type="button" id="toggle" aria-pressed="false">Show</button>
+      </div>
+    </div>
+
+    <section class="result" aria-live="polite">
+      <div class="meter" id="meter" data-level="empty">
+        <div class="meter-fill" id="meterFill"></div>
+      </div>
+      <p class="verdict" id="verdict">Waiting for a password</p>
+      <p class="hint" id="hint">Your result will appear as you type.</p>
+    </section>
+
+    <ul class="rules" id="rules">
+      <li data-rule="len8">At least 8 characters</li>
+      <li data-rule="len12">12 characters or more</li>
+      <li data-rule="lower">A lowercase letter (a–z)</li>
+      <li data-rule="upper">An uppercase letter (A–Z)</li>
+      <li data-rule="digit">A number (0–9)</li>
+      <li data-rule="special">A special character (! @ # $ % and so on)</li>
+    </ul>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
